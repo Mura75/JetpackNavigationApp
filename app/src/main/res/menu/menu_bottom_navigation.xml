@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_graph_list"
+        android:icon="@drawable/ic_android"
+        android:title="Item 1" />
+    <item
+        android:id="@+id/nav_graph_push"
+        android:icon="@drawable/ic_android"
+        android:title="Item 2" />
+
+    <item
+        android:id="@+id/nav_graph_profile"
+        android:icon="@drawable/ic_android"
+        android:title="Item 3" />
+
+</menu>

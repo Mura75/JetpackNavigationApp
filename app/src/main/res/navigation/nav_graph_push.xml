@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_push"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.app.navigation.feature.main.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_ratingBottomDialogFragment"
+            app:destination="@id/ratingBottomDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/ratingBottomDialogFragment"
+        android:name="com.app.navapp.feature.dialog.RatingBottomDialogFragment"
+        android:label="RatingBottomDialogFragment" >
+        <deepLink
+            android:id="@+id/deeplink"
+            app:uri="navapp://navapp.com/app"/>
+    </dialog>
+</navigation>

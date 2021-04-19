@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="ratingBottomDialogFragment"
+        android:enabled="true"
+        android:shortcutShortLabel="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
+        tools:targetApi="n_mr1">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="navapp://navapp.com/app" />
+    </shortcut>
+</shortcuts>
