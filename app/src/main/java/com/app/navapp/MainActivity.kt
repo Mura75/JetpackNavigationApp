@@ -20,16 +20,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun initBottomNavigation() {
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
-
-        bottomNavigationView.setupWithNavController(
-            navGraphIds = listOf(
-                R.navigation.nav_graph_list,
-                R.navigation.nav_graph_push,
-                R.navigation.nav_graph_profile
-            ),
-            fragmentManager = supportFragmentManager,
-            containerId = R.id.main_nav_host_container,
-            intent = intent
-        )
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            val res = when (item.itemId) {
+                R.id.nav_graph_list -> { R.navigation.nav_graph_list }
+                R.id.nav_graph_push -> { R.navigation.nav_graph_push }
+                else -> { R.navigation.nav_graph_profile }
+            }
+            val navHostFragment = NavHostFragment.create(res)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main_nav_host_container, navHostFragment)
+                .commitNow()
+            true
+        }
+        bottomNavigationView.selectedItemId = R.id.nav_graph_list
     }
 }

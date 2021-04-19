@@ -28,22 +28,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun createPush() {
-        val args = Bundle().apply {
-            putString("text", "hello new navigation")
-            putInt("rating", (1..5).random())
-        }
 
-        val pendingIntent = findNavController()
-            .createDeepLink()
-            .setDestination(R.id.ratingBottomDialogFragment)
-            .setArguments(args)
-            .createPendingIntent()
-
-        Notifier.postNotification(
-            id = 10,
-            context = requireContext(),
-            intent = pendingIntent
-        )
     }
 
     companion object {
