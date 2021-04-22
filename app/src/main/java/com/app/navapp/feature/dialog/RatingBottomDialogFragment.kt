@@ -18,14 +18,6 @@ class RatingBottomDialogFragment : BottomSheetDialogFragment() {
     private var rating: Int = 0
     private var text: String = ""
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.apply {
-            rating = getInt("rating")
-            text = getString("text", "")
-        }
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,8 +30,5 @@ class RatingBottomDialogFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         ratingBar = view.findViewById(R.id.ratingBar)
         textView = view.findViewById(R.id.textView)
-
-        ratingBar.rating = rating.toFloat()
-        textView.text = text
     }
 }
