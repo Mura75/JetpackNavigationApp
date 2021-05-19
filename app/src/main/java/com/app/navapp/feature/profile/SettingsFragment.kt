@@ -17,7 +17,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
         val button = view.findViewById<Button>(R.id.buttonOpenEditName)
         button.setOnClickListener {
-
+            findNavController().navigate(R.id.action_settingsFragment_to_editNameFragment)
         }
     }
 

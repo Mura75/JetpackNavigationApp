@@ -50,7 +50,7 @@ class ListFragment : Fragment(R.layout.fragment_list) {
             adapter = ItemRecyclerViewAdapter(
                 values = DummyContent.ITEMS,
                 itemClick = { item ->
-
+                    findNavController().navigate(R.id.action_listFragment_to_detailsFragment)
                 }
             )
 

@@ -15,10 +15,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private lateinit var buttonPush: Button
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         buttonPush = view.findViewById(R.id.buttonPush)
@@ -28,7 +24,22 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun createPush() {
+        val args = bundleOf(
+                "rating" to (1..5).random(),
+                "text" to "hello world"
+        )
 
+        val pendingIntent = findNavController()
+                .createDeepLink()
+                .setDestination(R.id.ratingBottomDialogFragment)
+                .setArguments(args)
+                .createPendingIntent()
+
+        Notifier.postNotification(
+                id = 10,
+                context = requireContext(),
+                intent = pendingIntent
+        )
     }
 
     companion object {

@@ -6,5 +6,19 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.app.navigation.feature.main.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_ratingBottomDialogFragment"
+            app:destination="@id/ratingBottomDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/ratingBottomDialogFragment"
+        android:name="com.app.navapp.feature.dialog.RatingBottomDialogFragment"
+        android:label="RatingBottomDialogFragment">
+
+        <deepLink
+            android:id="@+id/deeplink"
+            app:uri="navapp://navapp.com/app" />
+
+    </dialog>
 </navigation>

@@ -27,7 +27,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         tvMyItems = view.findViewById(R.id.tvMyItems)
 
         tvSettings.setOnClickListener {
-
+            findNavController().navigate(R.id.action_profileFragment_to_settingsFragment)
         }
         tvFaq.setOnClickListener {
 
@@ -36,12 +36,12 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         }
         tvMyItems.setOnClickListener {
-
+            findNavController().navigate(R.id.action_profileFragment_to_nav_graph_list)
         }
 
         setFragmentResultListener(EditNameFragment.REQUEST_KEY) { _, bundle ->
             val name = bundle.getString("name")
-            tvName.setText(name)
+            tvName.text = name
         }
     }
 
